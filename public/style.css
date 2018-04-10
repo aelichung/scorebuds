@@ -2,10 +2,13 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+.title {
+  text-align: center;
+}
+
 h1 {
   font-size: 36px;
   font-weight: 700;
-  text-align: center;
 }
 
 p {
