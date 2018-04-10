@@ -1,6 +1,54 @@
+// Authentication initialization
+
+var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      console.log(authResult);
+      firebaseAuthStateChanged(authResult.user);
+      return false;
+    }
+  },
+  signInSuccessUrl: '/',
+  signInFlow: "popup",
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    {
+      provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      scopes: [
+        'public_profile',
+        'email'
+      ]
+    }
+  ],
+  // Terms of service url.
+  tosUrl: '/#tos'
+};
+
+var firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
+
+function firebaseAuthStateChanged(user) {
+  console.log("firebaseAuthStateChanged");
+  if (user) {
+    $("#user-welcome-message").text("Hello, " + user.displayName + "!");
+    $("#user-welcome").show();
+  } else {
+    // Initialize the FirebaseUI Widget using Firebase.
+    // The start method will wait until the DOM is loaded.
+    $("#user-welcome").hide();
+    firebaseUI.start('#firebaseui-auth-container', uiConfig);
+  }
+}
+
 $(function() {
   // Initialize Cloud Firestore through Firebase
   var db = firebase.firestore();
+
+  firebase.auth().onAuthStateChanged(firebaseAuthStateChanged);
+
+  $("#sign-out").click(function() {
+    firebase.auth().signOut();
+  });
 
   let artClubUserObjects = [
     {
