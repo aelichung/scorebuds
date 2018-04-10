@@ -9,10 +9,9 @@ var uiConfig = {
     }
   },
   signInSuccessUrl: '/',
-  signInFlow: "popup",
   signInOptions: [
-    firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    //firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     {
       provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       scopes: [
