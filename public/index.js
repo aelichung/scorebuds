@@ -118,7 +118,7 @@ $(function() {
       const undoIcon = $('<i></i>', {class: 'fas fa-undo-alt fa-lg undo-icon'});
       undoIcon.appendTo(undoButton);
       undoButton.click(function() {
-        $('.star')
+        starsContainer.find('.star')
           .first()
           .remove();
         scoreObj.score -= 1;
