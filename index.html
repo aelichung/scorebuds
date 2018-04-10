@@ -1,0 +1,64 @@
+<html>
+<header>
+  <title>ScoreBuds</title>
+  <meta name="author" content="Anne-Elise Chung" />
+  <meta name="keywords" content="Chung, Anne-Elise, friends, gold, star , challenge" />
+  <meta name="description" content="Tally up gold stars with your friends." />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+
+</header>
+
+<body>
+  <div class="title">
+    <h1>ScoreBuds</h1>
+  </div>
+  <section class="user-scores">
+    <p>
+      Did you earn a star today?
+    </p>
+    <!-- <div class="score-container">
+      <div class="name-container">
+        <h2 class="name">CARRIE</h2>
+      </div>
+      <div class="stars-container">
+        <div>
+          <img alt="star" src="assets/star.png" />
+        </div>
+      </div>
+      <div class="button">
+        <p class="mobile">
+          Did you earn a star today?
+        </p>
+        <button>YES!</button>
+      </div>
+    </div> -->
+  </section>
+  <p class="copyright">
+    © 2018 Anne-Elise Chung
+  </p>
+</body>
+
+<footer>
+  <script src="jquery-3.3.1.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC_1FfoW4_XnixoypuhmOooM_hIrfclO8g",
+      authDomain: "scorebuds-19ed9.firebaseapp.com",
+      databaseURL: "https://scorebuds-19ed9.firebaseio.com",
+      projectId: "scorebuds-19ed9",
+      storageBucket: "",
+      messagingSenderId: "631539585332"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+
+  <script src="index.js"></script>
+</footer>
+
+</html>
